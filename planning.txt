@@ -1,0 +1,35 @@
+voting app 
+
+what?
+user can votes to candinates
+
+functionality-
+1. user sign in /sign up
+2.see the list of candinates
+3.vote only one of the candinates
+4. route which show list of candinates and their live votes in sorted order
+5. user must have aadhar
+6.admin to maintain candinates list and cant vote
+7.user can change password
+-----------------------------------------------
+
+routes-
+user authentication-
+    /signup: POST
+    /login: POST [aadhar + password]
+
+voting-
+    /candinates :GET list of candinates
+    /vote/:candinateID: POST vote for a specific candinate
+
+vote counts:
+    /vote/counts: GET list of candinates in sorted order by their vote counts
+
+User Profile:
+    /profile: GET user data
+    /profile/password: PUT change the user password
+
+Admin candinate Management:
+    /candinates: POST - create a new candinate
+    /candinates/:candinateID PUT - update a candinate
+    /candinates/:candinateID DELETE- delete a candinate from the list
