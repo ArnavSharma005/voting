@@ -10,11 +10,31 @@ const UserSchema=mongoose.Schema({
     },
     aadhar:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     has_voted:{
         type:Boolean,
         default:false
+    },
+    email:{
+        type:String
+    },
+    mobile:{
+        type:String
+    },
+    address:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    role:{
+        type:String,
+        enum: ["voter","admin"],
+        default:"voter"
     }
 },{timestamps:true});
 
